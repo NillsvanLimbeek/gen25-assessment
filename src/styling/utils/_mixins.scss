@@ -1,0 +1,23 @@
+// flexbox
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-align {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// views base
+@mixin view-base {
+    max-width: 114rem;
+    margin: 0 auto;
+    padding: 7.5rem 0;
+}
