@@ -1,60 +1,38 @@
 .clothing-detail {
     @include view-base;
+    @include flex-center;
 
-    height: 100vh;
+    display: flex;
 
-    display: grid;
-    grid-template-columns: 5fr 1fr 2fr;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-areas:
-        'main shirt details'
-        'main shorts details'
-        'main socks details'
-        'main shoes details'
-        'main overview details';
+    height: 112.4rem;
 }
 
 .clothing-detail__main {
-    grid-area: main;
-    border-right: 1px solid var(--color-white);
+    display: flex;
 }
 
-.clothing-detail__shirt {
-    grid-area: shirt;
+.clothing-detail__product {
+    width: 89.6rem;
+
+    border: 1px solid var(--border-color);
+    border-width: 0 1px 0 1px;
 }
 
-.clothing-detail__shorts {
-    grid-area: shorts;
+.clothing-detail__sections {
+    width: 17.6rem;
+
+    color: var(--color-white);
 }
 
-.clothing-detail__socks {
-    grid-area: socks;
-}
-
-.clothing-detail__shoes {
-    grid-area: shoes;
-}
-
-.clothing-detail__overview {
-    grid-area: overview;
-}
-
-.clothing-detail__main,
-.clothing-detail__shirt,
-.clothing-detail__shorts,
-.clothing-detail__socks,
-.clothing-detail__shoes,
-.clothing-detail__overview {
-    background-color: var(--color-grey-light);
-}
-
-.clothing-detail__shirt,
-.clothing-detail__shorts,
-.clothing-detail__socks,
-.clothing-detail__shoes,
-.clothing-detail__overview {
+.clothing-detail__section {
     @include flex-center-align;
 
-    font-size: 1.4rem;
-    border-bottom: 1px solid var(--color-white);
+    height: calc(100% / 5);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.clothing-detail__details {
+    width: 36.8rem;
+
+    background-color: var(--color-white);
 }
