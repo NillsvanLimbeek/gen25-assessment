@@ -1,3 +1,20 @@
-.details__arrow {
-    padding: 1rem;
+.details {
+    height: 100%;
+
+    border-left: 1px solid var(--border-color);
+}
+
+.details__header {
+    display: flex;
+
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+
+    p {
+        margin: 0 1.5rem;
+    }
+
+    i {
+        cursor: pointer;
+    }
 }

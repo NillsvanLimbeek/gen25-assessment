@@ -1,0 +1,12 @@
+.shirt {
+    padding: 1.5rem;
+}
+
+.shirt__header {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        margin-top: 0;
+    }
+}

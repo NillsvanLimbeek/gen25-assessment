@@ -6,7 +6,9 @@
                 @click="$emit('previous')"
             />
 
-            {{ section }}
+            <p>
+                {{ section }}
+            </p>
 
             <i
                 class="details__arrow fas fa-angle-right"
