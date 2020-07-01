@@ -4,22 +4,24 @@
 
     display: flex;
 
-    height: 112.4rem;
+    height: calc(100% - 8rem);
 }
 
 .clothing-detail__main {
     display: flex;
+
+    width: 75%;
 }
 
 .clothing-detail__product {
-    width: 89.6rem;
+    width: 75%;
 
     border: 1px solid var(--border-color);
     border-width: 0 1px 0 1px;
 }
 
 .clothing-detail__sections {
-    width: 17.6rem;
+    width: 25%;
 
     color: var(--color-white);
 }
@@ -28,11 +30,27 @@
     @include flex-center-align;
 
     height: calc(100% / 5);
+
+    color: var(--color-black);
+    text-decoration: none;
     border-bottom: 1px solid var(--border-color);
+
+    &:hover {
+        background-color: lightgrey;
+    }
+
+    &--active {
+        background-color: var(--color-white);
+        color: var(--color-grey);
+
+        &:hover {
+            background-color: var(--color-white);
+        }
+    }
 }
 
 .clothing-detail__details {
-    width: 36.8rem;
+    width: 25%;
 
     background-color: var(--color-white);
 }

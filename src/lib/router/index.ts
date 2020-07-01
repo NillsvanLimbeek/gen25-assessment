@@ -7,10 +7,53 @@ const routes: Array<RouteConfig> = [
     {
         path: '/',
         name: 'ClothingDetail',
+        redirect: '/shoes',
         component: () =>
             import(
-                /* webpackChunkName: "ClothingDetail" */ '@/views/ClothingDetail.vue'
+                /* webpackChunkName: "clothing-detail" */ '@/views/ClothingDetail.vue'
             ),
+        children: [
+            {
+                path: 'shirt',
+                name: 'Shirt',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "shirt" */ '@/components/forms/shirt/Shirt.vue'
+                    ),
+            },
+            {
+                path: 'shorts',
+                name: 'Shorts',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "shorts" */ '@/components/forms/shorts/Shorts.vue'
+                    ),
+            },
+            {
+                path: 'socks',
+                name: 'Socks',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "socks" */ '@/components/forms/socks/Socks.vue'
+                    ),
+            },
+            {
+                path: 'shoes',
+                name: 'Shoes',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "shoes" */ '@/components/forms/shoes/Shoes.vue'
+                    ),
+            },
+            {
+                path: 'overview',
+                name: 'Overview',
+                component: () =>
+                    import(
+                        /* webpackChunkName: "overview" */ '@/components/forms/overview/Overview.vue'
+                    ),
+            },
+        ],
     },
 ];
 
