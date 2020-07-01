@@ -58,7 +58,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 import { Pattern, Color } from '@/lib/types';
+import { mapGetters } from 'vuex';
 
 export default Vue.extend({
     name: 'Shirt',
@@ -80,6 +82,25 @@ export default Vue.extend({
                 colorB: 'black',
             },
         };
+    },
+
+    watch: {
+        selection: {
+            deep: true,
+            handler() {
+                this.$store.dispatch('shirt/setSelection', this.selection);
+            },
+        },
+    },
+
+    computed: {
+        ...mapGetters({
+            shirtSelection: 'shirt/getSelection',
+        }),
+    },
+
+    mounted() {
+        this.selection = this.shirtSelection;
     },
 });
 </script>

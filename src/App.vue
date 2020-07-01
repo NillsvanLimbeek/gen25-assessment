@@ -9,7 +9,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-const Header = () => import('@/components/Header/Header.vue');
+const Header = () => import('@/components/header/Header.vue');
 
 export default Vue.extend({
     name: 'App',

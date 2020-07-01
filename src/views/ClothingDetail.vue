@@ -1,7 +1,10 @@
 <template>
     <div class="clothing-detail">
         <div class="clothing-detail__main">
-            <div class="clothing-detail__product">Current Selection:</div>
+            <div class="clothing-detail__product">
+                <img v-if="shirtId.length" :src="getImg(shirtId)" alt="Shirt" />
+                <p v-else>Current Shirt Selection: {{ shirtSelection }}</p>
+            </div>
 
             <div class="clothing-detail__sections">
                 <router-link
@@ -31,6 +34,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapGetters } from 'vuex';
 
 import { Section } from '@/lib/types';
 import { uppercase } from '@/lib/utils';
@@ -88,6 +92,17 @@ export default Vue.extend({
         uppercase(string: string) {
             return uppercase(string);
         },
+
+        getImg(picture: string) {
+            return require(`../assets/${picture}.png`);
+        },
+    },
+
+    computed: {
+        ...mapGetters({
+            shirtSelection: 'shirt/getSelection',
+            shirtId: 'shirt/getShirtId',
+        }),
     },
 });
 </script>
