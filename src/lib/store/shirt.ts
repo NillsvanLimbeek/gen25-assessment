@@ -28,6 +28,7 @@ const mutations: MutationTree<ShirtState> = {
         const correctIds = ['st0106', 'st0206', 'st0201', 'st0102'];
         const shirtId = generateShirtId(state.selection);
 
+        // only show the correct img, otherwise the app chrashes
         if (correctIds.includes(shirtId)) {
             state.shirtId = generateShirtId(state.selection);
         }
